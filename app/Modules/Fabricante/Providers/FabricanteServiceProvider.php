@@ -45,7 +45,7 @@ class FabricanteServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__.'/../config/config.php' => config_path('fabricante.php'),
+            __DIR__.'/../config/config.php' => config_path('Fabricante.php'),
         ], 'config');
 
         // use the vendor configuration file as fallback

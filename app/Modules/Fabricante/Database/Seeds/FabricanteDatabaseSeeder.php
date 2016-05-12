@@ -4,6 +4,14 @@ namespace App\Modules\Fabricante\Database\Seeds;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
 
+
+// Hace uso del modelo de Fabricante.
+use App\Fabricante;
+
+
+use Faker\Factory as Faker;
+
+
 class FabricanteDatabaseSeeder extends Seeder
 {
 	/**
@@ -20,23 +28,23 @@ class FabricanteDatabaseSeeder extends Seeder
 		// $this->call('App\Modules\Fabricante\Database\Seeds\FoobarTableSeeder');
 
 
+		// Creamos una instancia de Faker
 		$faker = Faker::create();
-		for ($i=0; $i < 50; $i++) {
-			\DB::table('fabricantes')->insert(array(
-				'nombre' => $faker->firstNameFemale,
-				'direccion' => $faker->randomElement(['Calle 45 # 54 -998','Calle 54 # 45 -87','Carrera 97 # 2 - 104']),
-				'telefono' 	=> $faker->phoneNumber,
-				'created_at' => date('Y-m-d H:m:s'),
-				'updated_at' => date('Y-m-d H:m:s')
-			));
+
+		// Creamos un bucle para cubrir 5 fabricantes:
+		for ($i=0; $i<4; $i++)
+		{
+			// Cuando llamamos al método create del Modelo Fabricante
+			// se está creando una nueva fila en la tabla.
+			Fabricante::create(
+				[
+					'nombre'=>$faker->word(),
+					'direccion'=>$faker->word(),
+					'telefono'=>$faker->randomNumber(9)	// de 9 dígitos como máximo.
+				]
+			);
 		}
 
-
-
 	}
-
-
-
-
 
 }
