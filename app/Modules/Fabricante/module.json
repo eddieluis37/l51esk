@@ -1,0 +1,11 @@
+{
+	"name": "Fabricante",
+	"slug": "fabricante",
+	"namespace": "Fabricante",
+	"version": "1.0",
+	"author": "Eddie Luis Rada Gonzalez",
+	"license": "GLP - 3.0",
+	"description": "Este es el primer modulo fabricante",
+	"enabled": false,
+	"initialized": false
+}
