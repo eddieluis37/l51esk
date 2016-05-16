@@ -39,7 +39,10 @@ Route::group(['middleware' => 'authorize'], function () {
 
     // Fabricante routes
     Route::group(['prefix' => 'fabricante'], function () {
-        Route::get('methodName',        ['as' => 'fabricante.method_name',         'uses' => 'FabricanteController@methodName']);
+
+        Route::get('methodName',           ['as' => 'fabricante.method_name',         'uses' => 'FabricanteController@methodName']);
+        Route::delete('destroy',           ['as' => 'fabricante.destroy',             'uses' => 'FabricanteController@destroy']);
+
     }); // End of Fabricante group
 
 

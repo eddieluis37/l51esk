@@ -5,7 +5,7 @@
 
 @section('content')
     <div class='row'>
-        <div class='col-md-3'>
+        <div class='col-md-auto'>
             <div class="box box-primary">
                 <div class="box-header with-border">
                     <h3 class="box-title">{{ trans('fabricante::general.page.method-name.box-title') }}</h3>
@@ -16,11 +16,44 @@
                     </div>
                 </div>
                 <div class="box-body">
+                    <table class="table table-bordered" id="MyTable">
+                        <thead>
+                        <tr>
+                            <th class="text-center">ID</th>
+                            <th class="text-center">Nombre</th>
+                            <th class="text-center">Dirección</th>
+                            <th class="text-center">Telefono</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach($fabricantes as $fabricante)
+                            <tr>
+                                <td class="text-center">{{ $fabricante->id }}</td>
+                                <td class="text-center">{{ $fabricante->nombre }}</td>
+                                <td class="text-center">{{ $fabricante->direccion }}</td>
+                                <td class="text-center">{{ $fabricante->telefono }}</td>
 
-                    <div class="form-group">
-                        {!! Form::label('nombre', 'Nombre', ['for' => 'nombre'] ) !!}
-                        {!! Form::text('nombre', null , ['class' => 'form-control', 'id' => 'nombre', 'placeholder' => 'Escribe el nombre del pastel...' ]  ) !!}
-                    </div><!-- /.form-group -->
+                                {!! Form::open(['route' => ['fabricante.destroy', $fabricante->id], 'method' => 'DELETE']) !!}
+
+                                <td class="text-center">
+                                    <button type="submit" class="btn btn-danger btn-xs">
+                                        <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                                    </button>
+                                    <a href="{{ url('/pasteles/'.$fabricante->id.'/edit') }}" class="btn btn-info btn-xs">
+                                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                                    </a>
+                                </td>
+
+                                {!! Form::close() !!}
+
+                            </tr>
+                        @endforeach
+
+
+                    </table>
+
+                </div><!-- /.form-group -->
 
                 </div><!-- /.box-body -->
 
