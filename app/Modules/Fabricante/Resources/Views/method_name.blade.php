@@ -40,7 +40,7 @@
                                     <button type="submit" class="btn btn-danger btn-xs">
                                         <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
                                     </button>
-                                    <a href="{{ url($'/fabricante/'.$fabricantes->id.'/edit') }}" class="btn btn-info btn-xs">
+                                    <a href="{{ url('/fabricante/'.$fabricante->id.'/edit') }}" class="btn btn-info btn-xs">
                                         <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
                                     </a>
                                 </td>
