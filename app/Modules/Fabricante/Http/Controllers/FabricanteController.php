@@ -27,7 +27,7 @@ class FabricanteController extends Controller
 
     public function create()
     {
-        return view('fabricantes.create');
+        return view('fabricante::create');
     }
 
 
