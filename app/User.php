@@ -332,4 +332,17 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
                     );
     }
 
+
+
+    function ticket()
+    {
+        return $this->hasMany('App\Modules\Ticket\Models\Ticket');
+    }
+
+
+
+
+
+
+
 }
