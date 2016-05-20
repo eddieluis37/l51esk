@@ -29,8 +29,8 @@ class FabricanteDatabaseSeeder extends Seeder
 
 
 		// Creamos una instancia de Faker
-		$faker = Faker::create();
 
+		$faker = Faker::create();
 		// Creamos un bucle para cubrir 5 fabricantes:
 		for ($i=0; $i<4; $i++)
 		{
