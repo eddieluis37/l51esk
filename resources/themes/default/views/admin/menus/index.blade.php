@@ -8,7 +8,7 @@
 @section('content')
 
     <div class='row'>
-        <div class='col-md-auto'>
+        <div class='col-md-6'>
             <!-- Box -->
             <div class="box box-primary">
                 <div class="box-header with-border">
