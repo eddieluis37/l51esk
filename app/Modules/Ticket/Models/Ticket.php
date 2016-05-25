@@ -20,7 +20,7 @@ class Ticket extends Model
     protected $fillable = array('name','text','description');
 
     // Aquí ponemos los campos que no queremos que se devuelvan en las consultas.
-   // protected $hidden = ['created_at','updated_at'];
+    // protected $hidden = ['created_at','updated_at'];
 
     // Definimos a continuación la relación de esta tabla con otras.
     // Ejemplos de relaciones:
@@ -34,7 +34,7 @@ class Ticket extends Model
 
     function user()
     {
-            return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User');
     }
 
 
