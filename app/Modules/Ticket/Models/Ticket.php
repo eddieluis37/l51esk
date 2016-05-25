@@ -29,7 +29,7 @@ class Ticket extends Model
     // 1 post tiene muchos comentarios    ->hasMany() Relación 1:N
     // 1 comentario pertenece a 1 post    ->belongsTo() Relación 1:N inversa a hasMany()
     // 1 usuario puede tener muchos roles ->belongsToMany()
-    //  etc..
+    //
 
 
     function user()
