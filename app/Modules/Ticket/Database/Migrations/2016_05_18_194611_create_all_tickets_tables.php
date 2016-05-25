@@ -38,6 +38,7 @@ class CreateAllTicketsTables extends Migration
 			$table->string('name', 100)->unique();
 			$table->text('text')->nullable();
 			$table->string('description')->nullable();
+
 			$table->unsignedInteger('user_id');
 			$table->foreign('user_id')->references('id')->on('users')
 				->onUpdate('cascade')->onDelete('cascade');
