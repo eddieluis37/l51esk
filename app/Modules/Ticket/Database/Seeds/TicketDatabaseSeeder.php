@@ -8,9 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 
 use Faker\Factory as Faker;
 
+use App\Modules\Ticket\Models\Importance;
 
 use App\Modules\Ticket\Models\Ticket;
-use App\Modules\Ticket\Models\Importance;
+
+use App\Modules\Ticket\Models\Type;
+
 
 
 class TicketDatabaseSeeder extends Seeder
@@ -22,51 +25,48 @@ class TicketDatabaseSeeder extends Seeder
 	 */
 	public function run()
 	{
-		// Model::unguard();
 
-		// $this->call('App\Modules\Ticket\Database\Seeds\FoobarTableSeeder');
-
-
-		// Creamos una instancia de Faker
-
-		$faker = Faker::create();
-		// Creamos un bucle para cubrir 5 fabricantes:
-
-		for ($i=0; $i<4; $i++)
-		{
-			// Cuando llamamos al método create del Modelo Ticket
+			// Cuando llamamos al método create del Modelo Importance
 			// se está creando una nueva fila en la tabla.
 
-			$importances_id = Importance::insertGetId(
+			Importance::create(
 				[
-					'name'			=>$faker->word(),
-
+					'name'		=>'baja',
 				]
 			);
 
-
-			$types_id =  Type::createinsertGetId(
+			Importance::create(
 				[
-					'name'			=>$faker->word(),
-
+					'name'		=>'media',
 				]
 			);
 
-
-
-			Ticket::create(
+			Importance::create(
 				[
-
-					'user_id'		=>$faker->randomNumber(2), // de 2 dígitos como máximo.
-					'importance_id' =>$importances_id,
-					'type_id'		=>$types_id,
-					'name'			=>$faker->word(),
-					'text'			=>$faker->text(),
-					'description'	=>$faker->randomNumber(9)	// de 9 dígitos como máximo.
+					'name'		=>'alta',
 				]
 			);
-		}
 
+			////////////////////////////////////**********\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+			Type::create(
+				[
+					'name'		=>'incidencia',
+				]
+			);
+
+			Type::create(
+				[
+					'name'		=>'fallo',
+				]
+			);
+
+			Type::create(
+				[
+					'name'		=>'solicitud',
+				]
+			);
 
 	}
 

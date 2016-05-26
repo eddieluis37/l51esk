@@ -18,6 +18,8 @@ class CreateAllTicketsTables extends Migration
 			$table->increments('id');
 			$table->string('name', 100)->unique();
 
+			$table->timestamps();
+			$table->softDeletes();
 
 		});
 
@@ -26,6 +28,9 @@ class CreateAllTicketsTables extends Migration
 		Schema::create('types', function (Blueprint $table) {
 			$table->increments('id');
 			$table->string('name', 100)->unique();
+
+			$table->timestamps();
+			$table->softDeletes();
 
 
 		});
@@ -40,8 +45,7 @@ class CreateAllTicketsTables extends Migration
 			$table->string('description')->nullable();
 
 			$table->unsignedInteger('user_id');
-			$table->foreign('user_id')->references('id')->on('users')
-				->onUpdate('cascade')->onDelete('cascade');
+			$table->foreign('user_id')->references('id')->on('users');
 
 			$table->unsignedInteger('importance_id');
 			$table->foreign('importance_id')->references('id')->on('importances')
@@ -129,12 +133,18 @@ class CreateAllTicketsTables extends Migration
 	 * @return void
 	 */
 	public function down()
+
 	{
-		Schema::dropIfExists('tickets');
-		Schema::dropIfExists('importances');
 		Schema::dropIfExists('types');
-		Schema::dropIfExists('notes');
 		Schema::dropIfExists('watchers');
+
+		Schema::dropIfExists('notes');
+		Schema::dropIfExists('importances');
+		Schema::dropIfExists('tickets');
+
+
+
+
 	}
 
 }

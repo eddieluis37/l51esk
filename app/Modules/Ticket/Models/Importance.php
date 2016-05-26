@@ -17,7 +17,7 @@ class Importance extends Model
     protected $table="importances";
 
     // Atributos que se pueden asignar de manera masiva.
-    protected $fillable = array('name');
+    protected $fillable = array('name', 'id');
 
     // Aquí ponemos los campos que no queremos que se devuelvan en las consultas.
 

@@ -9,7 +9,7 @@ use Auth;
 
 
 use App\Modules\Ticket\Models\Ticket;
-
+use App\User;
 
 class TicketController extends Controller
 {
@@ -34,15 +34,32 @@ class TicketController extends Controller
 
     public function store(Request $request)
     {
-        $ticket = new ticket;
+        /*$ticket = new ticket;
+
         $ticket->name          = $request->input('name');
         $ticket->text          = $request->input('text');
         $ticket->description   = $request->input('description');
 
         $ticket->save();
 
+
+
+        */
+
+        $request->user()->ticket()->create([
+
+           'name'           => $request->name,
+
+        ]);
+
+
+
+
+
+
         return redirect()->route('ticket.method_name');
-    }
+
+        }
 
 
 
