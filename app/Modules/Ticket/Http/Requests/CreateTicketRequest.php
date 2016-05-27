@@ -13,7 +13,7 @@ class CreateTicketRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			'name'          => 'required',
+			'name'          => 'required|unique:tickets|max:255',
 			'text'          => 'required',
 			'description'   => 'required',
 		];
