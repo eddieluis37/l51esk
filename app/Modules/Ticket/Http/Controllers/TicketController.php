@@ -32,23 +32,17 @@ class TicketController extends Controller
     }
 
 
-    public function store(Request $request)
+    //Guarda
+
+        public function store(Request $request)
     {
-        /*$ticket = new ticket;
-
-        $ticket->name          = $request->input('name');
-        $ticket->text          = $request->input('text');
-        $ticket->description   = $request->input('description');
-
-        $ticket->save();
-
-
-
-        */
 
         $request->user()->ticket()->create([
 
-           'name'           => $request->name,
+                'name'          => $request->name,
+                'text'          => $request->text,
+                'description'   => $request->description,
+
 
         ]);
 
