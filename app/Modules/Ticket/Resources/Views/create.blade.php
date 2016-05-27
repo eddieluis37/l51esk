@@ -16,14 +16,12 @@
                         <button class="btn btn-box-tool" data-widget="collapse" data-toggle="tooltip" title="Collapse"><i class="fa fa-minus"></i></button>
                     </div>
                 </div>
+
                 <div class="box-body">
-
                     {!! Form::open([ 'route' => 'ticket.store', 'method' => 'POST']) !!}
-                    @include('ticket::fields')
-                    <button type="submit" class="btn btn-success btn-block">Guardar</button>
-                    {!! Form::close() !!}
-
-
+                        @include('ticket::fields')
+                        <button type="submit" class="btn btn-success btn-block">Guardar</button>
+                   {!! Form::close() !!}
                 </div><!-- /.form-group -->
 
             </div><!-- /.box-body -->

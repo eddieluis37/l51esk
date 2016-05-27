@@ -13,7 +13,9 @@ class CreateTicketRequest extends FormRequest
 	public function rules()
 	{
 		return [
-			//
+			'name'          => 'required',
+			'text'          => 'required',
+			'description'   => 'required',
 		];
 	}
 
@@ -24,6 +26,6 @@ class CreateTicketRequest extends FormRequest
 	 */
 	public function authorize()
 	{
-		return false;
+		return true;
 	}
 }

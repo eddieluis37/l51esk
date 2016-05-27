@@ -2,6 +2,7 @@
 namespace App\Modules\Ticket\Http\Controllers;
 
 use App\Http\Requests;
+use App\Modules\Ticket\Http\Requests\CreateTicketRequest;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Repositories\AuditRepository as Audit;
@@ -9,13 +10,12 @@ use Auth;
 
 
 use App\Modules\Ticket\Models\Ticket;
-use App\User;
+
 
 class TicketController extends Controller
 {
     public function methodName()
     {
-
 
         $tickets = Ticket::get();
 
@@ -34,7 +34,7 @@ class TicketController extends Controller
 
     //Guarda
 
-        public function store(Request $request)
+        public function store(CreateTicketRequest $request)
     {
 
         $request->user()->ticket()->create([
@@ -42,7 +42,6 @@ class TicketController extends Controller
                 'name'          => $request->name,
                 'text'          => $request->text,
                 'description'   => $request->description,
-
 
         ]);
 
