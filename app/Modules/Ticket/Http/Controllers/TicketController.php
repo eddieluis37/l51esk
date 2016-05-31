@@ -10,6 +10,7 @@ use Auth;
 
 
 use App\Modules\Ticket\Models\Ticket;
+use App\Modules\Ticket\Models\Importance;
 
 
 class TicketController extends Controller
@@ -28,7 +29,8 @@ class TicketController extends Controller
 
     public function create()
     {
-        return view('ticket::create');
+        $importances = \DB::table('importances')->lists('name', 'id');
+        return view('ticket::create')->with('importances', $importances);
     }
 
 
@@ -37,15 +39,14 @@ class TicketController extends Controller
         public function store(CreateTicketRequest $request)
     {
 
-        $request->user()->ticket()->create([
+        $request->user()->importance()->ticket()->create([
 
                 'name'          => $request->name,
                 'text'          => $request->text,
                 'description'   => $request->description,
 
+
         ]);
-
-
 
 
 

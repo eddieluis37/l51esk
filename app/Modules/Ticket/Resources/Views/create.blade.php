@@ -1,7 +1,10 @@
 @extends('layouts.master')
 
 @section('head_extra')
+        <!-- Select2 css  /opt/lampp/htdocs/l51esk/resources/themes/default/partials/_head_extra_select2_css.blade.php  -->
+@include('partials._head_extra_select2_css')
 @endsection
+
 
 @section('content')
     {{ csrf_field() }}
@@ -21,7 +24,7 @@
                     {!! Form::open([ 'route' => 'ticket.store', 'method' => 'POST']) !!}
                         @include('ticket::fields')
                         <button type="submit" class="btn btn-success btn-block">Guardar</button>
-                   {!! Form::close() !!}
+                    {!! Form::close() !!}
                 </div><!-- /.form-group -->
 
             </div><!-- /.box-body -->

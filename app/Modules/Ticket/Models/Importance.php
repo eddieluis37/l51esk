@@ -35,9 +35,8 @@ class Importance extends Model
 
     function user()
     {
-            return $this->belongsTo('App\User');
+            return $this->belongsTo('App\Modules\Ticket\Models\Importance');
     }
-
 
 
 

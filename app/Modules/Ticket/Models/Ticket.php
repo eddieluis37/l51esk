@@ -32,11 +32,18 @@ class Ticket extends Model
     //
 
 
-    function user()
+    public function user()
+
     {
         return $this->belongsTo('App\User');
     }
 
+
+    public function importances()
+    {
+        return $this->hasMany('App\Modules\Ticket\Models\Importance');
+
+    }
 
 
 
