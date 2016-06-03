@@ -22,35 +22,16 @@ class FabricanteController extends Controller
     }
 
 
-//Este metodo es muy sencillo puesto que solo va a devolver una vista sin ninguna variable
-// ni uso de Eloquent, por lo cual queda de la siguiente manera:+
+    //Este metodo es muy sencillo puesto que solo va a devolver una vista sin ninguna variable
+    // ni uso de Eloquent, por lo cual queda de la siguiente manera:+
 
     public function create()
     {
-        return view('fabricante::create');
+        return view('fabricantes::create');
     }
 
 
 
-    public function store(Request $request)
-    {
-        $fabricante = new fabricante;
-        $fabricante->nombre     = $request->input('nombre');
-        $fabricante->direccion  = $request->input('direccion');
-        $fabricante->telefono   = $request->input('telefono');
 
-        $fabricante->save();
-
-        return redirect()->route('fabricantes.method_name');
-    }
-
-
-    public function destroy($id)
-    {
-       Fabricante::destroy($id);
-
-
-        return view('fabricante::method_name')->with('fabricantes', $fabricantes);
-    }
 
 }

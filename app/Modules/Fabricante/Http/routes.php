@@ -45,6 +45,10 @@ Route::group(['middleware' => 'authorize'], function () {
         Route::post('store',               ['as' => 'fabricante.store',               'uses' => 'FabricanteController@store']);
         Route::delete('destroy',           ['as' => 'fabricante.destroy',             'uses' => 'FabricanteController@destroy']);
 
+        Route::get('methodName',        ['as' => 'fabricante.method_name',         'uses' => 'FabricanteController@methodName']);
+        Route::get('create',            ['as' => 'fabricante.new',                 'uses' => 'FabricanteController@create']);
+        Route::post('store',            ['as' => 'fabricante.store',               'uses' => 'FabricanteController@store']);
+
     }); // End of Fabricante group
 
 

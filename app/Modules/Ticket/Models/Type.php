@@ -17,7 +17,7 @@ class Type extends Model
     protected $table="types";
 
     // Atributos que se pueden asignar de manera masiva.
-    protected $fillable = array('name');
+    protected $fillable = array('name', 'id');
 
     // Aquí ponemos los campos que no queremos que se devuelvan en las consultas.
     // protected $hidden = ['created_at','updated_at'];

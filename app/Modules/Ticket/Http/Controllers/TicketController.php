@@ -31,7 +31,19 @@ class TicketController extends Controller
     {
         $importances = \DB::table('importances')->lists('name', 'id');
         return view('ticket::create')->with('importances', $importances);
+
+
     }
+
+    public function listarCreate()
+    {
+        $types = \DB::table('types')->lists('name', 'id');
+        return view('ticket::create')->with('types', $types);
+
+
+    }
+
+
 
 
     //Guarda
@@ -39,11 +51,13 @@ class TicketController extends Controller
         public function store(CreateTicketRequest $request)
     {
 
-        $request->user()->importance()->ticket()->create([
+        $request->user()->ticket()->create([
 
                 'name'          => $request->name,
                 'text'          => $request->text,
                 'description'   => $request->description,
+                'importance_id' => $request->importance_id,
+                'type_id'      => $request->type_id,
 
 
         ]);

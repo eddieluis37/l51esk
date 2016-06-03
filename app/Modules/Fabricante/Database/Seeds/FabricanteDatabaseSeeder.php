@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 
 // Hace uso del modelo de Fabricante.
-use App\Fabricante;
+use App\Models\Fabricante;
 
 
 use Faker\Factory as Faker;

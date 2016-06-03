@@ -8,8 +8,11 @@
     {!! Form::label('description', 'Descripción', ['for' => 'description'] ) !!}
     {!! Form::text('description', null , ['class' => 'form-control', 'id' => 'description', 'placeholder' => 'Escriba una breve descripción' ]  ) !!}
 
+    <div class="form-group">
 
-    {!! Form::label('Importancia') !!}
-    {!! Form::select('importance', (['0' => 'Seleccione nivel de Importancia'] + $importances),null, ['class' => 'form-control']) !!}
+    {!! Form::label('importance_id', 'Importancia') !!}
+    {!! Form::select('importance_id', (['0' => 'Seleccione nivel de Importancia'] + $importances),null, ['class' => 'form-control']) !!}
+    </div>
+
 
 </div>

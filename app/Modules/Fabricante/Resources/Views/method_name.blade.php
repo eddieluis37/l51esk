@@ -2,7 +2,7 @@
 
 @section('head_extra')
 @endsection
-
+use App\User;
 @section('content')
     <div class='row'>
         <div class='col-md-auto'>
@@ -34,6 +34,7 @@
                                 <td class="text-center">{{ $fabricante->direccion }}</td>
                                 <td class="text-center">{{ $fabricante->telefono }}</td>
 
+<<<<<<< Updated upstream
                                 {!! Form::open(['route' => ['fabricante.destroy', $fabricante->id], 'method' => 'DELETE']) !!}
 
                                 <td class="text-center">
@@ -54,6 +55,17 @@
                     </table>
 
                 </div><!-- /.form-group -->
+=======
+                    <div class="form-group">
+                        @foreach($user as $user)
+                            <tbody>
+                                <td>{{$user->name}}</td>
+
+                            </tbody>
+                        @endforeach
+
+
+>>>>>>> Stashed changes
 
                 </div><!-- /.box-body -->
 
