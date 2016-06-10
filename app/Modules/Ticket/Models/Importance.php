@@ -33,10 +33,16 @@ class Importance extends Model
     //  etc..
 
 
-    function user()
+    function importances()
+
     {
+        $importances = \DB::table('importances')->lists('name', 'id');
+        return view('ticket::create')->with('importances', $importances);
             return $this->belongsTo('App\Modules\Ticket\Models\Importance');
     }
+
+
+
 
 
 

@@ -17,7 +17,7 @@ class Ticket extends Model
     protected $table="tickets";
 
     // Atributos que se pueden asignar de manera masiva.
-    protected $fillable = array('name','text','description', 'importance_id', 'type-id');
+    protected $fillable = array('name','text','description', 'importance_id', 'type_id');
 
     // Aquí ponemos los campos que no queremos que se devuelvan en las consultas.
      protected $hidden = ['created_at','updated_at'];
@@ -35,13 +35,21 @@ class Ticket extends Model
     public function user()
 
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Modules\Ticket\Models\Type');
     }
 
 
     public function importances()
     {
-        return $this->hasMany('App\Modules\Ticket\Models\Importance');
+        $importances = \DB::table('importances')->lists('name', 'id');
+        return view('ticket::create')->with('importances', $importances);
+
+    }
+
+    public function types()
+    {
+        $types = \DB::table('types')->lists('name', 'id');
+        return view('ticket::create')->with('types', $types);
 
     }
 

@@ -43,8 +43,18 @@ Route::group(['middleware' => 'authorize'], function () {
         Route::get('create',            ['as' => 'ticket.create',              'uses' => 'TicketController@create']);
         Route::post('store',            ['as' => 'ticket.store',               'uses' => 'TicketController@store']);
         Route::delete('destroy',        ['as' => 'ticket.destroy',             'uses' => 'TicketController@destroy']);
-    
+
+
     }); // End of Ticket group
 
 
+
+
+
 }); // end of AUTHORIZE middleware group
+
+
+
+
+
+

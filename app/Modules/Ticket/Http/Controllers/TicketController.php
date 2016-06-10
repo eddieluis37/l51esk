@@ -29,6 +29,7 @@ class TicketController extends Controller
 
     public function create()
     {
+
         $importances = \DB::table('importances')->lists('name', 'id');
         return view('ticket::create')->with('importances', $importances);
 

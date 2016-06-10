@@ -34,7 +34,7 @@ class Type extends Model
 
     function user()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\Modules\Ticket\Models\Type');
     }
 
 
