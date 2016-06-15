@@ -171,3 +171,8 @@ Route::group(['middleware' => 'authorize'], function () {
 
     require __DIR__.'/rapyd.php';
 }); // end of AUTHORIZE middleware group
+
+Route::resource('/api/users', 'ApiUserController');
+
+
+Route::resource('/', 'UserController');

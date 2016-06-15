@@ -39,6 +39,10 @@ scratch. This page gets rid of all links and provides the needed markup only.
   </head>
 
   <!-- Body -->
+
+
+
   @include('partials._body')
 
+  @include('layouts.layout')
 </html>
